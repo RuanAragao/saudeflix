@@ -49,17 +49,32 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: 0;
 }
 
 .featured-movie {
   display: flex;
+  height: 180px;
+  background-image: 
+  linear-gradient(
+    180deg, 
+    rgba(20, 20, 20, 0) 50%, 
+    var(--brand-black) 100%),
+  linear-gradient(
+    90deg, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.4) 100%), 
+    url(../sample/featured-movie.jpg);
+  background-size: cover;
 }
 
 .featured-movie .container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-around;
+  padding-bottom: 18px;
 }
 
 .featured-movie .btn-play {
