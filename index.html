@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAÚDEFLIX - Vídeos para profissionais e estudantes</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/main.css">
 
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -32,15 +36,30 @@
 <body>
   <header class="header-master">
     <div class="container">
-      <button type="button" role="button" aria-label="menu" class="btn">
+      <button type="button" role="button" aria-label="menu" class="btn no-bg">
         <img src="img/menu.png" alt="menu">
       </button>
       <img src="img/logo.png" alt="SAÚDEFLIX">
-      <button type="button" role="button" aria-label="procurar" class="btn">
+      <button type="button" role="button" aria-label="procurar" class="btn no-bg">
         <img src="img/fe_search.png" alt="procurar">
       </button>
     </div>
   </header>
+
+  <section class="featured-movie">
+    <div class="container">
+      <button class="btn no-bg">
+        <img src="img/btn-add.png" alt="Adicionar na lista">
+      </button>
+      <button class="btn btn-play">
+        <img src="img/play.png" alt="play">
+        Assistir
+      </button>
+      <button class="btn no-bg">
+        <img src="img/btn-info.png" alt="Informações">
+      </button>
+    </div>
+  </section>
 
   <script src="js/main.js"></script>
 </body>
