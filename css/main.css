@@ -1,0 +1,14 @@
+:root {
+  --brand-black: #141414;
+  --brand-white: #fff;
+  --theme-button-primary: var(--brand-white);
+  --theme-button-secondary: var(--brand-black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
