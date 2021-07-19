@@ -87,3 +87,13 @@ body {
 .featured-movie .btn-play img {
   margin-right: 8px;
 }
+
+.carousel-movies {
+  margin-left: 16px;
+}
+
+.carousel-movies .title-section {
+  color: var(--brand-white);
+  font-size: 12px;
+  font-weight: 500;
+}
