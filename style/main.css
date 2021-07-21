@@ -120,6 +120,13 @@ body {
   margin-bottom: 4px;
 }
 
+.carousel-movies .item a.link-movie img {
+  transition: .2s ease-out;
+}
+.carousel-movies .item a.link-movie:hover img,
+.carousel-movies .item a.link-movie:focus img {
+  transform: scale(1.05);
+}
 
 @media screen and (min-width: 700px) {
   .featured-movie {

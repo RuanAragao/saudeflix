@@ -54,52 +54,60 @@ const makeCarousel = function () {
 
 // Monta a lista
 let divCarouselMovies, h3TitleSection, divOwlCarousel;
-let divItem, imgItem;
+let divItem, linkItem, imgItem;
 
 keysCategoriesFeed.map((category, index) => {
   console.log("Category: " + category, index)
 
+  // <div class="carousel-movies">
   divCarouselMovies = document.createElement('div');
   divCarouselMovies.className = 'carousel-movies';
+
+  //   <h3 class="title-section">${category}</h3>
   h3TitleSection = document.createElement('h3');
   h3TitleSection.className = 'title-section';
   h3TitleSection.innerText = category;
   divCarouselMovies.appendChild(h3TitleSection);
 
+  //   <div class="owl-carousel owl-theme" id="category-${index}">
   divOwlCarousel = document.createElement('div');
   divOwlCarousel.className = 'owl-carousel owl-theme';
   divOwlCarousel.id = `category-${index}`;
 
 
-  // feed.appendChild(`
   // <div class="carousel-movies">
   //   <h3 class="title-section">${category}</h3>
   //   <div class="owl-carousel owl-theme" id="category-${index}">
 
   //   </div>
   // </div>
-  // `);
 
   let categoryCarousel = document.getElementById(`category-${index}`);
   movies[category].map(movie => {
 
+    //   <div class="item">
     divItem = document.createElement('div');
     divItem.className = 'item';
 
+    // <a href="#" id="" class="link-movie">
+    linkItem = document.createElement('a');
+    linkItem.className = 'link-movie';
+    linkItem.id = movie;
+    linkItem.href = `#${movie}`;
+
+    //     <img src="${movieData.cover(movie, 0)}" alt="Video" class="thumb-movie">
     imgItem = document.createElement('img');
     imgItem.className = 'thumb-movie';
-    imgItem.src = movieData.cover(movie, 0);
-    divItem.appendChild(imgItem);
+    imgItem.src = movieData.cover(movie, "mqdefault");
+    linkItem.appendChild(imgItem);
 
+    divItem.appendChild(linkItem);
     divOwlCarousel.appendChild(divItem);
 
 
-    // console.log("Movie: " + movie)
-    // categoryCarousel.appendChild(`
     //   <div class="item">
     //     <img src="${movieData.cover(movie, 0)}" alt="Video" class="thumb-movie">
     //   </div>
-    // `)
   })
 
   divCarouselMovies.appendChild(divOwlCarousel);
