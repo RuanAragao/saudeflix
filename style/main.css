@@ -110,12 +110,14 @@ body {
 
 .carousel-movies {
   margin-left: 16px;
+  margin-bottom: 13px;
 }
 
 .carousel-movies .title-section {
   color: var(--brand-white);
   font-size: 12px;
   font-weight: 500;
+  margin-bottom: 4px;
 }
 
 
