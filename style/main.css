@@ -128,6 +128,51 @@ body {
   transform: scale(1.05);
 }
 
+.player {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--brand-black);
+}
+.player #ytplayer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.player .control {
+  display: flex;
+  position: absolute;
+
+  top: -50px;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(
+    0deg, 
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, .7) 50%,
+    var(--brand-black) 100%);
+  
+  transition: .2s ease-out;
+  opacity: 0;
+  z-index: 2;
+}
+.player .control:hover {
+  top: 0;
+  opacity: 1;
+}
+
+.player .control button {
+  color: var(--theme-button-primary);
+  font-size: 26px;
+}
+
+.player .control button svg {
+  margin-right: 10px;
+}
+
 @media screen and (min-width: 700px) {
   .featured-movie {
     height: 460px;
