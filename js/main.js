@@ -1,6 +1,6 @@
 // Lista de videos e suas categorias
 const movies = {
-  "featured": "Procedimentos de Enfermagem",
+  "featured": "Anatomia",
 
   "Procedimentos de Enfermagem": [
     "pnXggmSjhxw",
@@ -15,8 +15,6 @@ const movies = {
   ]
 }
 
-const featuredId = movies[movies.featured][2];
-
 // Função que retorna dados do vídeo
 const movieData = {
   cover(id, resolution = "maxresdefault") {
@@ -28,29 +26,28 @@ const movieData = {
 }
 
 // Configura o vídeo de destaque
+// const featuredId = movies[movies.featured][2];
+const BtnFeaturedMoviePlay = document.getElementById("BtnFeaturedMoviePlay"); // Botão para assitir vídeo em desstaque 
+const featuredMovie = document.getElementById("featuredMovie");
 const featuredChange = function () {
-  const featuredMovie = document.getElementById("featuredMovie");
+  const min = Math.ceil(0);
+  const max = Math.floor(movies[movies.featured].length);
+  const indM = Math.floor(Math.random() * (max - min)) + min;
+  const featuredId = movies[movies.featured][indM];
+
+  // Evento para reproduzir o vídeo em destaque ao pressionar o botão
+  BtnFeaturedMoviePlay.addEventListener("click", () => loadMovie(featuredId), false);
+
+  // Exibe a capa do vídeo
   featuredMovie.style.backgroundImage = `linear-gradient(180deg,rgba(20,20,20,0) 50%,var(--brand-black)100%), linear-gradient(90deg,rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.4) 100%), url(${movieData.cover(featuredId)})`;
 }
+
 
 // Pega a lista de keys excluindo o primeiro, que é o destaque.
 const keysCategoriesFeed = Object.keys(movies).slice(1);
 
 
 const feed = document.getElementById("feed");
-
-const makeCarousel = function () {
-  feed.innerHTML = `
-  <div class="carousel-movies">
-    <h3 class="title-section">Procedimentos de Enfermagem</h3>
-    <div class="owl-carousel owl-theme">
-      <div class="item">
-        <img src="sample/thumb-movie.jpg" alt="Movie Alt" class="thumb-movie">
-      </div>
-    </div>
-  </div>
-  `
-}
 
 // Monta a lista
 let divCarouselMovies, h3TitleSection, divOwlCarousel;
