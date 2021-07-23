@@ -94,10 +94,12 @@ keysCategoriesFeed.map((category, index) => {
     linkItem.className = 'link-movie';
     linkItem.id = movie;
     linkItem.href = `#${movie}`;
+    linkItem.dataset.movie = movie;
 
     //     <img src="${movieData.cover(movie, 0)}" alt="Video" class="thumb-movie">
     imgItem = document.createElement('img');
     imgItem.className = 'thumb-movie';
+    imgItem.dataset.movie = movie;
     imgItem.src = movieData.cover(movie, "mqdefault");
     linkItem.appendChild(imgItem);
 
@@ -153,7 +155,7 @@ function hidePlayer() {
 // Carrega o vídeo no player
 function loadMovie(movieId) {
   // Monta a url do embed
-  const mUrl = `https://www.youtube.com/embed/${movieId}?autoplay=0&controls=1&enablejsapi=0&modestbranding=1`;
+  const mUrl = `https://www.youtube.com/embed/${movieId}?autoplay=1&controls=1&enablejsapi=0&modestbranding=1`;
   // Carrega a url no player
   playerFrame.src = mUrl;
 
@@ -177,9 +179,20 @@ function exitMovie() {
 
 
 function load() {
+  const linksMovies = document.getElementsByClassName('link-movie');
+
+  // Adiciona o evento para todos os vídeos listados
+  Array.from(linksMovies).forEach(function (linkMovie) {
+    linkMovie.addEventListener('click', event => {
+      // Carrega o vídeo clicado
+      loadMovie(event.target.getAttribute('data-movie'));
+    });
+  });
+
   // Evento para botão "Sair" do player
   btnBack.addEventListener('click', exitMovie, false);
 }
 
+// Chama função "load" após carregamento da DOM
 document.addEventListener("DOMContentLoaded", load, false);
 
