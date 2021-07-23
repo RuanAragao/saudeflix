@@ -131,12 +131,14 @@ body {
 .player {
   display: flex;
   position: fixed;
-  top: 100vh;
+  top: 120vh;
   width: 100vw;
   height: 100vh;
 
   background-color: var(--brand-black);
   z-index: 3;
+
+  transition: .3s;
 }
 .player #ytplayer {
   position: relative;

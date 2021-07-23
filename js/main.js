@@ -138,6 +138,7 @@ let playerOn = false;
 function showPlayer() {
   if (!playerOn) {
     playerScreen.style.top = 0;
+    playerScreen.style.opacity = 1;
     document.body.style.overflow = "hidden";
     playerOn = true;
     return true;
@@ -148,7 +149,8 @@ function showPlayer() {
 // Oculta player
 function hidePlayer() {
   if (playerOn) {
-    playerScreen.style.top = "initial";
+    playerScreen.style.top = (window.outerHeight + 50 + "px");
+    playerScreen.style.opacity = 0;
     document.body.style.overflow = "initial";
     playerOn = false;
     return true;
