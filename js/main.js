@@ -115,6 +115,71 @@ keysCategoriesFeed.map((category, index) => {
 })
 
 
-// Chama funções
-
+// Chama função que monta o víde em destaque
 featuredChange();
+
+// window.addEventListener('load', function () { alert() }, false);
+
+const playerScreen = document.getElementById('player');
+const playerFrame = document.getElementById('ytplayer');
+const btnBack = document.getElementById('btnBack');
+
+// Gerenciamento de visibilidade do player
+// Registra o estado do player
+let playerOn = false;
+
+// Mostra player
+function showPlayer() {
+  if (!playerOn) {
+    playerScreen.style.top = 0;
+    document.body.style.overflow = "hidden";
+    playerOn = true;
+    return true;
+  }
+  return false;
+}
+
+// Oculta player
+function hidePlayer() {
+  if (playerOn) {
+    playerScreen.style.top = "initial";
+    document.body.style.overflow = "initial";
+    playerOn = false;
+    return true;
+  }
+  return false;
+}
+
+// Carrega o vídeo no player
+function loadMovie(movieId) {
+  // Monta a url do embed
+  const mUrl = `https://www.youtube.com/embed/${movieId}?autoplay=0&controls=1&enablejsapi=0&modestbranding=1`;
+  // Carrega a url no player
+  playerFrame.src = mUrl;
+
+  // Se o player está oculto, mostra.
+  if (!playerOn) showPlayer();
+
+  return true;
+}
+
+function exitMovie() {
+  if (playerOn) {
+    // Oculta o player
+    hidePlayer();
+    // limpar o frame
+    playerFrame.src = "";
+    return true;
+  }
+
+  return false;
+}
+
+
+function load() {
+  // Evento para botão "Sair" do player
+  btnBack.addEventListener('click', exitMovie, false);
+}
+
+document.addEventListener("DOMContentLoaded", load, false);
+
