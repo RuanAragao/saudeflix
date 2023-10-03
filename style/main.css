@@ -214,7 +214,7 @@ body {
 
 .owl-prev:hover .arrow,
 .owl-next:hover .arrow{
-  fill: red;
+  fill: rgb(137, 137, 137);
 }
 
 .owl-item {
