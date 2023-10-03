@@ -1,26 +1,5 @@
 // Lista de videos e suas categorias
-const movies = {
-  "featured": "Anatomia",
-
-  "Procedimentos de Enfermagem": [
-    "pnXggmSjhxw",
-    "mNzaZd-6r94",
-    "bDfDvhCeYAU",
-    "bQOKsjoFBPI"
-  ],
-  "Anatomia": [
-    "5c3Pp-b7uwc",
-    "CKgzFFgBsGw",
-    "EomqdYxppY4"
-  ],
-  "Atendimento Pré-Hospitalar": [
-    "jhGvxSolN7k",
-    "v1GlE9UzMYg",
-    "D39psjudLGI",
-    "S2_EU1T-o-g",
-    "lhSsztkQnAA"
-  ]
-}
+const movies = require("../json/movies.json");
 
 // Função que retorna dados do vídeo
 const movieData = {
