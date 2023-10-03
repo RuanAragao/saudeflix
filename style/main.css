@@ -182,29 +182,35 @@ body {
   background-color: black;
 }
 
-.owl-prev,
-.owl-next {
+.owl-prev-btn,
+.owl-next-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 70px; 
+  width: 30px;
+  height: 100%; 
   background-color: transparent;
   color: #fff;
   border: none;
   cursor: pointer;
+  
 }
 
-.owl-prev {
-  left: 5px; 
+.owl-prev-btn:hover,
+.owl-next-btn:hover {
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-.owl-next {
-  right: 1%; 
+.owl-prev-btn {
+  left: 0; 
 }
 
-.owl-prev svg,
-.owl-next svg {
+.owl-next-btn {
+  left: 96%;
+}
+
+.owl-prev-btn svg,
+.owl-next-btn svg {
   position: absolute;
   left: 0;
   transform: translateY(-50%);
@@ -212,9 +218,8 @@ body {
 
 }
 
-.owl-prev:hover .arrow,
-.owl-next:hover .arrow{
-  fill: rgb(137, 137, 137);
+.arrow-svg-path {
+  fill: white;
 }
 
 .owl-item {
@@ -236,8 +241,18 @@ body {
     padding-bottom: 32px;
   }
 
-  .owl-prev svg,
-  .owl-next svg {
+  .owl-prev-btn {
+    left: 0; 
+    width: 45px;
+  }
+  
+  .owl-next-btn {
+    left: 95%;
+    width: 45px;
+  }
+
+  .owl-prev-btn svg,
+  .owl-next-btn svg {
     width: 40px;
   }
 }
@@ -247,8 +262,18 @@ body {
     height: calc(100vh - 160px);
   }
 
-  .owl-prev svg,
-  .owl-next svg {
+  .owl-prev-btn svg,
+  .owl-next-btn svg {
+    width: 60px;
+  }
+
+  .owl-prev-btn {
+    left: 0; 
+    width: 60px;
+  }
+  
+  .owl-next-btn {
+    right: 0;
     width: 60px;
   }
 
