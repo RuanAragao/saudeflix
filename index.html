@@ -100,6 +100,39 @@
   <script src="js/owl/jquery.min.js"></script>
   <script src="js/owl/owl.carousel.min.js"></script>
   <script src="js/owl/setup.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      $(".owl-stage-outer").each(function (index) {
+        var $carousel = $(this);
+    
+        $carousel.owlCarousel({
+          items: 6, 
+          loop: true,
+          nav: false,
+          dots: false,
+        
+          onInitialized: function () {
+            var prevButton = $('<button class="owl-prev"><img src="img/left-arrow.png" alt="left arrow"></button>');
+            var nextButton = $('<button class="owl-next"><img src="img/right-arrow.png" alt="right-arrow"></button>');
+    
+            prevButton.click(function () {
+              $carousel.trigger("prev.owl.carousel");
+            });
+    
+            nextButton.click(function () {
+              $carousel.trigger("next.owl.carousel");
+            });
+    
+            $carousel.parent().append(prevButton);
+            $carousel.parent().append(nextButton);
+          },
+        });
+      });
+    }); 
+  </script>
+  
 </body>
 
 </html>
