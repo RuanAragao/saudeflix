@@ -187,8 +187,8 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px; 
+  width: 60px;
+  height: 70px; 
   background-color: transparent;
   color: #fff;
   border: none;
@@ -200,17 +200,21 @@ body {
 }
 
 .owl-next {
-  right: 20px; 
+  right: 1%; 
 }
 
-.owl-prev > img,
-.owl-next > img {
-  transition: background-color 0.2s;
+.owl-prev svg,
+.owl-next svg {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  width: 30px;
+
 }
 
-.owl-prev >img:hover,
-.owl-next >img:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+.owl-prev:hover .arrow,
+.owl-next:hover .arrow{
+  fill: red;
 }
 
 .owl-item {
@@ -232,8 +236,8 @@ body {
     padding-bottom: 32px;
   }
 
-  .owl-prev > img,
-  .owl-next > img {
+  .owl-prev svg,
+  .owl-next svg {
     width: 40px;
   }
 }
@@ -243,8 +247,8 @@ body {
     height: calc(100vh - 160px);
   }
 
-  .owl-prev > img,
-  .owl-next > img {
+  .owl-prev svg,
+  .owl-next svg {
     width: 60px;
   }
 
