@@ -1,5 +1,5 @@
 // Lista de videos e suas categorias
-const movies = require("../json/movies.json");
+import movies from "../json/movies.json";
 
 // Função que retorna dados do vídeo
 const movieData = {
