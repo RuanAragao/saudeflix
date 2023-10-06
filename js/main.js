@@ -1,5 +1,6 @@
 // Lista de videos e suas categorias
-const movies = require("../json/movies.json");
+import movies from "../json/movies.json" assert { type: "json" };
+let movieArr = movies.movies;
 
 // Função que retorna dados do vídeo
 const movieData = {
@@ -17,9 +18,9 @@ const BtnFeaturedMoviePlay = document.getElementById("BtnFeaturedMoviePlay"); //
 const featuredMovie = document.getElementById("featuredMovie");
 const featuredChange = function () {
   const min = Math.ceil(0);
-  const max = Math.floor(movies[movies.featured].length);
+  const max = movieArr[movieArr.featured].length;
   const indM = Math.floor(Math.random() * (max - min)) + min;
-  const featuredId = movies[movies.featured][indM];
+  const featuredId = movieArr[movieArr.featured][indM];
 
   // Evento para reproduzir o vídeo em destaque ao pressionar o botão
   BtnFeaturedMoviePlay.addEventListener("click", () => loadMovie(featuredId), false);
