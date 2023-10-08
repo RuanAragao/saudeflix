@@ -17,7 +17,7 @@ const movieData = {
 const BtnFeaturedMoviePlay = document.getElementById("BtnFeaturedMoviePlay"); // Botão para assitir vídeo em desstaque 
 const featuredMovie = document.getElementById("featuredMovie");
 const featuredChange = function () {
-  const min = Math.ceil(0);
+  const min = 0;
   const max = movieArr[movieArr.featured].length;
   const indM = Math.floor(Math.random() * (max - min)) + min;
   const featuredId = movieArr[movieArr.featured][indM];
@@ -31,7 +31,7 @@ const featuredChange = function () {
 
 
 // Pega a lista de keys excluindo o primeiro, que é o destaque.
-const keysCategoriesFeed = Object.keys(movies).slice(1);
+const keysCategoriesFeed = Object.keys(movieArr).slice(1);
 
 
 const feed = document.getElementById("feed");
@@ -67,7 +67,7 @@ keysCategoriesFeed.map((category, index) => {
   // </div>
 
   let categoryCarousel = document.getElementById(`category-${index}`);
-  movies[category].map(movie => {
+  movieArr[category].map(movie => {
 
     //   <div class="item">
     divItem = document.createElement('div');
