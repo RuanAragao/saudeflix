@@ -1,26 +1,6 @@
 // Lista de videos e suas categorias
-const movies = {
-  "featured": "Anatomia",
-
-  "Procedimentos de Enfermagem": [
-    "pnXggmSjhxw",
-    "mNzaZd-6r94",
-    "bDfDvhCeYAU",
-    "bQOKsjoFBPI"
-  ],
-  "Anatomia": [
-    "5c3Pp-b7uwc",
-    "CKgzFFgBsGw",
-    "EomqdYxppY4"
-  ],
-  "Atendimento Pré-Hospitalar": [
-    "jhGvxSolN7k",
-    "v1GlE9UzMYg",
-    "D39psjudLGI",
-    "S2_EU1T-o-g",
-    "lhSsztkQnAA"
-  ]
-}
+import movies from "../json/movies.json" assert { type: "json" };
+let movieArr = movies.movies;
 
 // Função que retorna dados do vídeo
 const movieData = {
@@ -37,10 +17,10 @@ const movieData = {
 const BtnFeaturedMoviePlay = document.getElementById("BtnFeaturedMoviePlay"); // Botão para assitir vídeo em desstaque 
 const featuredMovie = document.getElementById("featuredMovie");
 const featuredChange = function () {
-  const min = Math.ceil(0);
-  const max = Math.floor(movies[movies.featured].length);
+  const min = 0;
+  const max = movieArr[movieArr.featured].length;
   const indM = Math.floor(Math.random() * (max - min)) + min;
-  const featuredId = movies[movies.featured][indM];
+  const featuredId = movieArr[movieArr.featured][indM];
 
   // Evento para reproduzir o vídeo em destaque ao pressionar o botão
   BtnFeaturedMoviePlay.addEventListener("click", () => loadMovie(featuredId), false);
@@ -51,7 +31,7 @@ const featuredChange = function () {
 
 
 // Pega a lista de keys excluindo o primeiro, que é o destaque.
-const keysCategoriesFeed = Object.keys(movies).slice(1);
+const keysCategoriesFeed = Object.keys(movieArr).slice(1);
 
 
 const feed = document.getElementById("feed");
@@ -87,7 +67,7 @@ keysCategoriesFeed.map((category, index) => {
   // </div>
 
   let categoryCarousel = document.getElementById(`category-${index}`);
-  movies[category].map(movie => {
+  movieArr[category].map(movie => {
 
     //   <div class="item">
     divItem = document.createElement('div');
