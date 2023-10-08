@@ -177,6 +177,55 @@ body {
   margin-right: 10px;
 }
 
+.owl-carousel {
+  position: relative;
+  background-color: black;
+}
+
+.owl-prev-btn,
+.owl-next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 100%; 
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  
+}
+
+.owl-prev-btn:hover,
+.owl-next-btn:hover {
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.owl-prev-btn {
+  left: 0; 
+}
+
+.owl-next-btn {
+  left: 96%;
+}
+
+.owl-prev-btn svg,
+.owl-next-btn svg {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  width: 30px;
+
+}
+
+.arrow-svg-path {
+  fill: white;
+}
+
+.owl-item {
+  margin-right: 10px;
+}
+
 @media screen and (min-width: 700px) {
   .featured-movie {
     height: 460px;
@@ -191,10 +240,41 @@ body {
     padding-left: 32px;
     padding-bottom: 32px;
   }
+
+  .owl-prev-btn {
+    left: 0; 
+    width: 45px;
+  }
+  
+  .owl-next-btn {
+    left: 95%;
+    width: 45px;
+  }
+
+  .owl-prev-btn svg,
+  .owl-next-btn svg {
+    width: 40px;
+  }
 }
 
 @media screen and (min-width: 980px) {
   .featured-movie {
     height: calc(100vh - 160px);
   }
+
+  .owl-prev-btn svg,
+  .owl-next-btn svg {
+    width: 60px;
+  }
+
+  .owl-prev-btn {
+    left: 0; 
+    width: 60px;
+  }
+  
+  .owl-next-btn {
+    right: 0;
+    width: 60px;
+  }
+
 }
